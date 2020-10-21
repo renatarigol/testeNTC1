@@ -15,19 +15,7 @@
  
  <profiles>
         <profile>
-            <id>platform-windows-32bit</id>
-            <activation>
-                <os>
-                    <family>windows</family>
-                </os>
-            </activation>
-            <properties>
-                <platform>windows</platform>
-                <webdriver.gecko.driver.binary>geckodriver-windows-32bit.exe</webdriver.gecko.driver.binary>
-            </properties>
-        </profile>
-        <profile>
-            <id>platform-windows-32bit</id>
+            <id>platform-windows</id>
             <activation>
                 <os>
                     <family>windows</family>
@@ -37,7 +25,7 @@
                 <platform>windows</platform>
                 <webdriver.gecko.driver.binary>geckodriver-windows-64bit.exe</webdriver.gecko.driver.binary>
             </properties>
-        </profile>        
+        </profile>       
     </profiles>
     
     <plugin>

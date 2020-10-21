@@ -41,7 +41,7 @@ public class TesteNTConsult {
 	  @Before
 	  public void inicializar() {
 		  
-    	System.setProperty("webdriver.gecko.driver", "C:/geckodriver/geckodriver.exe");
+    	System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver/geckodriver.exe");
 
 	    driver = new FirefoxDriver();
 	    js = (JavascriptExecutor) driver;	    
