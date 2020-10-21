@@ -4,6 +4,7 @@
   <artifactId>simulacaoinvestimento</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+    
   <dependencies>
   		<dependency>
  			<groupId>org.seleniumhq.selenium</groupId>
@@ -12,5 +13,46 @@
   		</dependency>
  </dependencies>
  
+ <profiles>
+        <profile>
+            <id>platform-windows-32bit</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <platform>windows</platform>
+                <webdriver.gecko.driver.binary>geckodriver-windows-32bit.exe</webdriver.gecko.driver.binary>
+            </properties>
+        </profile>
+        <profile>
+            <id>platform-windows-32bit</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <platform>windows</platform>
+                <webdriver.gecko.driver.binary>geckodriver-windows-64bit.exe</webdriver.gecko.driver.binary>
+            </properties>
+        </profile>        
+    </profiles>
+    
+    <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <includes>
+                        <include>*Spec*</include>
+                    </includes>
+                    <systemPropertyVariables>
+                        <geb.build.reportsDir>${project.build.directory}/test-reports/geb</geb.build.reportsDir>
+                        <webdriver.gecko.driver>${project.basedir}/drivers/${webdriver.gecko.driver.binary}</webdriver.gecko.driver>
+                    </systemPropertyVariables>
+                </configuration>
+    </plugin>
   
 </project>
