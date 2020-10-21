@@ -34,10 +34,15 @@ public class TesteNTConsult {
 	  private DSLNTC dsl;
 	  private SimulaInvestimentoPage simipage;
 	  private TestesUI tui;
+	  	  
+
 	  
 	  
 	  @Before
 	  public void inicializar() {
+		  
+    	System.setProperty("webdriver.gecko.driver", "C:/geckodriver/geckodriver.exe");
+
 	    driver = new FirefoxDriver();
 	    js = (JavascriptExecutor) driver;	    
 	    dsl = new DSLNTC(driver);
